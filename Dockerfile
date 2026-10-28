@@ -48,7 +48,7 @@ RUN pip install -r requirements.txt
 # Run as a non-root user.
 RUN useradd --create-home --uid 1000 appuser
 COPY --from=train --chown=appuser:appuser /build/kmeans_model.pkl /build/scaler.pkl ./
-COPY --chown=appuser:appuser segmentation.py ./
+COPY --chown=appuser:appuser segmentation.py customer_segmentation.csv ./
 USER appuser
 
 EXPOSE 8501
