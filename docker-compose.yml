@@ -1,0 +1,10 @@
+services:
+  customer-segmentation:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: customer-segmentation:latest
+    container_name: customer-segmentation
+    ports:
+      - "8501:8501"
+    restart: unless-stopped   # comes back after crashes and reboots
